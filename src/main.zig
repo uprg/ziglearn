@@ -1,6 +1,6 @@
 const std = @import("std");
 
-const Slave = struct {
+const Humans = struct {
     age: usize,
     name: [6]u8,
     salary: f32,
@@ -9,7 +9,7 @@ const Slave = struct {
 pub fn main() !void {
     const allocator = std.heap.page_allocator;
 
-    var ptr = try allocator.create(Slave);
+    var ptr = try allocator.create(Humans);
     defer allocator.destroy(ptr);
 
     ptr.age = 35;
